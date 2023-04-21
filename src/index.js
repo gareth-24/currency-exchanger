@@ -55,7 +55,7 @@ function printError(error,currencyId) {
 }
 
 function printInputError()  {
-  document.querySelector("#showResponse").innerText = "Error: the currency you have entered does not exist. Please enter a valid currency";
+  document.querySelector("#showResponse").innerText = "Error: the currency you have entered does not exist or is not supported. Please enter a valid currency";
 }
 
 function handleFormSubmission(event) {
