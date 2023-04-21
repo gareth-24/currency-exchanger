@@ -29,6 +29,7 @@ function checkValidUsdInput(dollarsInput)  {
 }
 
 function checkValidCurrencyId(currencyId,response)  {
+  //checks if the entered currency type matches a key-value from the API
   const validCurrencyIds = Object.keys(response.conversion_rates);
   // console.log(validCurrencyIds);
   if (validCurrencyIds.includes(currencyId))  {
@@ -43,7 +44,8 @@ function checkValidCurrencyId(currencyId,response)  {
 //User Interface Logic
 
 function printElements(response,convertedAmount,currencyId)  {
-  document.querySelector("#showResponse").innerText = `The current exchange rate from USD to ${currencyId} is ${response.conversion_rates[currencyId]}. Converted amount: ${convertedAmount}`;
+  document.querySelector("#showResponse").innerText = `The current exchange rate from USD to ${currencyId} is ${response.conversion_rates[currencyId]}.`;
+  document.querySelector("#convertedAmount").innerText = `Converted Amount: ${convertedAmount} ${currencyId}`
 }
 
 function printError(error,currencyId) {
@@ -63,6 +65,7 @@ function handleFormSubmission(event) {
   // document.querySelector("#input-dollars").value = null;
   // document.querySelector("#input-convert-to").value = null;
   document.querySelector("#showResponse").innerText = null;
+  document.querySelector("#convertedAmount").innerText = null;
   getConversionRates(dollars,currencyId);
 }
 
