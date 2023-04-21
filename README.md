@@ -30,13 +30,7 @@ _This is a web application that allows users to convert US dollars to another cu
 * _At the website, enter your email and click the "Get Free Key" button_
 * _You'll be prompted to create an account with your email, first name and a password. Agree to the terms of use and click "Get Started!"_
 * _At this point, you'll be able to access a dashboard that includes your API key as well as your remaining API calls for the month._
-* _Open the ".env" file in the project directory and add your API key by entering the line ```API_KEY={xxx}``` where the ```{xxx}``` should be replaced with your private key. Be sure to follow this exact naming convention, including capitalization, then save the file. _
-<!-- create new file named ".env" -->
-<!-- go to "url" -->
-<!-- make an account -->
-<!-- get API key -->
-<!-- open .env file paste in this line "API_KEY={xxx}" where {xxx} is replaced with API key from website -->
-
+* _Open the ".env" file in the project directory and add your API key by entering the line ```API_KEY={xxx}``` where the ```{xxx}``` should be replaced with your private key. Be sure to follow this exact naming convention, including capitalization, then save the file._
 * _Run the following commands in the terminal to install packages with npm:_
 ```
 $ npm install
