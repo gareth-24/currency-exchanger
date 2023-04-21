@@ -1,4 +1,4 @@
-# _Bike Index API_
+# _Currency Exchanger_
 
 #### By _**Gareth Grindeland**_
 
