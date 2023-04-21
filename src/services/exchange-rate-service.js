@@ -5,8 +5,11 @@ export default class ExchangeRateService  {
       const jsonifiedResponse = await response.json();
       if (!response.ok) {
         //call an error message
-        throw new Error(`${response.status} ${response.statusText} 
-        ${jsonifiedResponse.message}`);
+        // console.log("error is thrown in service file");
+        const errorMessage = `${response.status} ${response.statusText}
+        ${jsonifiedResponse.message}`;
+        // console.log(`${response.status} ${response.statusText} ${jsonifiedResponse.message}`);
+        throw new Error(errorMessage);
       }
       return jsonifiedResponse;
     } catch(error)  {
