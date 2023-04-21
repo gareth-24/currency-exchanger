@@ -5,14 +5,16 @@ import ExchangeRateService from './services/exchange-rate-service';
 
 //Business Logic
 
-async function getConversionRates(dollars,currencyInput)  {
+async function getConversionRates(dollarsInput,currencyInput)  {
   const response = await ExchangeRateService.getConversionRates();
   const currencyId = currencyInput.toUpperCase();
+  const dollars = parseInt(Math.abs(dollarsInput));
   checkValidUsdInput(dollars);
-  // checkValidCurrencyId(currencyId,response);
   // console.log(dollars,currencyId);
+  // console.log(typeof dollars);
   if (response.conversion_rates && (checkValidCurrencyId(currencyId,response)===true))  {
-    const convertedAmount = dollars*(response.conversion_rates[currencyId]);
+    //round converted amount to 2 decimals
+    const convertedAmount = Math.round(dollars*(response.conversion_rates[currencyId])*100)/100;
     printElements(response,convertedAmount,currencyId);
   } else if (response.conversion_rates && checkValidCurrencyId(currencyId,response)===false) {
     printInputError();
@@ -25,6 +27,8 @@ function checkValidUsdInput(dollarsInput)  {
   //if the user does not enter a valid input, return the base conversion rate for 1$
   if (isNaN(dollarsInput)) {
     dollarsInput = 1;
+  } else {
+    return dollarsInput;
   }
 }
 
