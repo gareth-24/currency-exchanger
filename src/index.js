@@ -11,7 +11,7 @@ async function getConvertedCurrency(dollars,currencyId)  {
   console.log(dollars,currencyId);
   if (response.conversion_rates)  {
     const convertedAmount = dollars*(response.conversion_rates[currencyId]);
-    printElements(response,convertedAmount);
+    printElements(response,convertedAmount,currencyId);
   } else  {
     printError(response);
   }
@@ -19,8 +19,8 @@ async function getConvertedCurrency(dollars,currencyId)  {
 
 //User Interface Logic
 
-function printElements(response,convertedAmount)  {
-  document.querySelector("#showResponse").innerText = `The exchange rate is ${response.conversion_rates.CAD}. Converted amount: ${convertedAmount}`;
+function printElements(response,convertedAmount,currencyId)  {
+  document.querySelector("#showResponse").innerText = `The current exchange rate from USD to ${currencyId} is ${response.conversion_rates.CAD}. Converted amount: ${convertedAmount}`;
 }
 
 function printError(error) {
