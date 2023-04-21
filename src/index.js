@@ -10,7 +10,7 @@ async function getConversionRates(dollarsInput,currencyInput)  {
   const currencyId = currencyInput.toUpperCase();
   const dollars = parseInt(Math.abs(dollarsInput));
   checkValidUsdInput(dollars);
-  // console.log(dollars,currencyId);
+  console.log(dollars,currencyId);
   // console.log(typeof dollars);
   if (response.conversion_rates && (checkValidCurrencyId(currencyId,response)===true))  {
     //round converted amount to 2 decimals
