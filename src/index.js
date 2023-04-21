@@ -10,7 +10,7 @@ async function getConvertedCurrency(dollars,currencyId)  {
   console.log(response.conversion_rates.CAD);
   console.log(dollars,currencyId);
   if (response.conversion_rates)  {
-    const convertedAmount = dollars*(response.conversion_rates.currencyId);
+    const convertedAmount = dollars*(response.conversion_rates[currencyId]);
     printElements(response,convertedAmount);
   } else  {
     printError(response);
@@ -19,8 +19,8 @@ async function getConvertedCurrency(dollars,currencyId)  {
 
 //User Interface Logic
 
-function printElements(response)  {
-  document.querySelector('showResponse').innerText = `The exchange rate is ${response.exchange_rate.CAD}. Converted amount: ${convertedAmount}`;
+function printElements(response,convertedAmount)  {
+  document.querySelector("#showResponse").innerText = `The exchange rate is ${response.conversion_rates.CAD}. Converted amount: ${convertedAmount}`;
 }
 
 function printError(error) {
@@ -30,7 +30,9 @@ function printError(error) {
 
 function handleFormSubmission(event) {
   event.preventDefault();
-  //WIP get inputs from submit form and call conversion rate functions
+  const dollars = document.querySelector("#input-dollars").value;
+  const currencyId = document.querySelector("#input-convert-to").value;
+  getConvertedCurrency(dollars,currencyId);
 }
 
 window.addEventListener("load", function() {
