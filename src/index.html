@@ -9,18 +9,18 @@
       <div class="mb-3">
         <label for="input-dollars">US Dollar amount ($):</label>
         <input id="input-dollars" type="number" step="0.01" name="input-dollars" class="form-control" placeholder="100.00" required><br>
-        <label for="input-convert-to">Choose a foreign currency type by entering its ISO abbreviation <em>(i.e. 'CAD' for Canadian Dollar)</em>:</label>
+        <label for="input-convert-to">Choose a foreign currency by entering its ISO abbreviation <em>(i.e. 'CAD' for Canadian Dollar)</em>:</label>
         <input id="input-convert-to" type="text" name="input-convert-to" class="form-control" placeholder="CAD" required>
         <div class="form-text">
           Visit <a href="https://www.bis.org/publ/qtrpdf/r_qt2009_abbreviations.pdf">Bank for International Settlements</a> for a list of currency abbreviation codes.
         </div>
       </div>
-      
+
       <div class="accordion">
         <div class="accordion-item" id="common-currencies">
           <h3 class="accordion-header" id="headingOne">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-              Reference for common currencies -<em> (click to show or hide)</em>:
+              Reference for common currencies -<em> (click here to show or hide)</em>:
             </button>
           </h3>
           <div id="collapseOne" class="accordion-collapse collapse show">
@@ -45,9 +45,10 @@
       <button type="submit" class="btn btn-success" id="submit-button">Submit</button>
     </form>
 
-    <div id="results">
+    <div id="results" class="card">
+      <h4>Results:</h4>
       <p id="showResponse"></p>
-      <h4 id="convertedAmount"></h4>
+      <h6 id="convertedAmount"></h6>
     </div>
 
   </div>

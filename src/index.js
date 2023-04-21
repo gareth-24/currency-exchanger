@@ -49,7 +49,7 @@ function checkValidCurrencyId(currencyId,response)  {
 
 function printElements(response,convertedAmount,currencyId)  {
   document.querySelector("#showResponse").innerText = `The current exchange rate from USD to ${currencyId} is ${response.conversion_rates[currencyId]}.`;
-  document.querySelector("#convertedAmount").innerText = `Converted Amount: ${convertedAmount} ${currencyId}`;
+  document.querySelector("#convertedAmount").innerText = `Converted Value: ${convertedAmount} ${currencyId}`;
 }
 
 function printError(error,currencyId) {
